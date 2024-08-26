@@ -1,13 +1,8 @@
 "use client";
-import {
-  useQuery,
-  QueryClientProvider,
-  QueryClient,
-} from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import * as React from "react";
-const queryClient = new QueryClient();
 
-export function App() {
+export default function Test() {
   const [id, setId] = React.useState(1);
   const {
     data: pokemon,
@@ -29,12 +24,5 @@ export function App() {
         <h1>{pokemon.name}</h1>
       </div>
     </div>
-  );
-}
-export default function Test() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
   );
 }
