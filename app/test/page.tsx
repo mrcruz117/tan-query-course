@@ -9,7 +9,10 @@ export default function Test() {
     isLoading,
     error,
   } = useQuery({
+    // query key must be globally unique
     queryKey: ["pokemon", id],
+    // queryFn doesnt need to be async
+    // bun must return a promise
     queryFn: () =>
       fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((res) =>
         res.json()
